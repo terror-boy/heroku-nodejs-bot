@@ -13,4 +13,4 @@ npm i
 npm install
 npm audit fix
 
-echo "[*] Semua telah di install, Untuk menjalankan ketik \"npm start\" 👍"
+echo "[*] Installation process has been completed, Type \"npm start\" To start JARVIS👍"
