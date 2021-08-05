@@ -427,16 +427,15 @@ Ruri.on('group-participants-update', async (anu) => {
             }
         shortpc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppimg}`)
         shortgc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppgc}`)
-            if (anu.action == 'add') {
-         	img = await getBuffer(`https://servant-of-evil.herokuapp.com/api/swiftlite/welkom?nama=${encodeUrl(namaewa)}&gc=${encodeUrl(mdata.subject)}&ppgc=${shortgc.data}&pp=${shortpc.data}&bg=${imgibb}&member=${mdata.participants.length}&apikey=GFL`)
+            let img = await getBuffer(ppimg)
             teks = `┌───〔 *_𝙹𝙰𝚁𝚅𝙸𝚂_* 〕\n┊\n└───────────𔒝\n┌───〔 ᴡᴇʟᴄᴏᴍᴇ 〕\n┊ʜᴇʏ ${namaewa}\n┊ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ:\n┊${mdata.subject}\n┊ɴᴜᴍʙᴇʀ: ${num.replace('@s.whatsapp.net', '')}\n┊ʜᴏᴘᴇғᴜʟʟʏ ғᴇᴇʟ ᴀᴛ ʜᴏᴍᴇ\n└───────────𔒝`
             Ruri.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]} })
             } else if (anu.action == 'promote') {
-            img = await getBuffer(`http://hadi-api.herokuapp.com/api/card/promote?nama=${encodeUrl(namaewa)}&member=${member}&pesan=Selamat anda menjadi admin group!&pp=${shortpc.data}&bg=${imgibb}`)
+            let img = await getBuffer(ppimg)
             teks = `┌───〔 *_𝙹𝙰𝚁𝚅𝙸𝚂_* 〕\n┊\n└───────────𔒝\n┌───〔 ᴘʀᴏᴍᴏᴛᴇᴅ 〕\n┊ᴘʀᴏᴍᴏᴛᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ\n┊\n┊ɴᴜᴍʙᴇʀ: ${num.replace('@s.whatsapp.net', '')}\n┊ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴs ʏᴏᴜ ʙᴇᴄᴏᴍᴇ ᴀ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ!\n┊@${num.split('@')[0]}\n└───────────𔒝`
             Ruri.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]}})
             } else if (anu.action == 'demote') {
-            img = await getBuffer(`http://hadi-api.herokuapp.com/api/card/demote?nama=${encodeUrl(namaewa)}&member=${member}&pesan=Awokawok di unadmin, mampus:v&pp=${shortpc.data}&bg=${imgibb}`)
+            let img = await getBuffer(ppimg)
             teks = `┌───〔 *_𝙹𝙰𝚁𝚅𝙸𝚂_* 〕\n┊\n└───────────𔒝\n┌───〔 ᴅᴇᴍᴏᴛᴇᴅ 〕\n┊ᴅᴇᴍᴏᴛᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ\n┊\n┊ɴᴜᴍʙᴇʀ: ${num.replace('@s.whatsapp.net', '')}\n┊ʏᴏᴜ ᴀʀᴇ ɴᴏ ʟᴏɴɢᴇʀ ᴀɴ ᴀᴅᴍɪɴ\n┊@${num.split('@')[0]}\n└───────────𔒝`
             Ruri.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]}})
          }
