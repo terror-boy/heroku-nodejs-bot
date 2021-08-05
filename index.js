@@ -427,8 +427,9 @@ Ruri.on('group-participants-update', async (anu) => {
             }
         shortpc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppimg}`)
         shortgc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppgc}`)
-            let img = await getBuffer(ppimg)
-            teks = `┌───〔 *_𝙹𝙰𝚁𝚅𝙸𝚂_* 〕\n┊\n└───────────𔒝\n┌───〔 ᴡᴇʟᴄᴏᴍᴇ 〕\n┊ʜᴇʏ ${namaewa}\n┊ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ:\n┊${mdata.subject}\n┊ɴᴜᴍʙᴇʀ: ${num.replace('@s.whatsapp.net', '')}\n┊ʜᴏᴘᴇғᴜʟʟʏ ғᴇᴇʟ ᴀᴛ ʜᴏᴍᴇ\n└───────────𔒝`
+            if (anu.action == 'add') {
+         	let img = await getBuffer(ppimg)
+            teks = `┌───〔 *_𝙹𝙰𝚁𝚅𝙸𝚂_* 〕\n┊\n└───────────𔒝\n┌───〔 ᴡᴇʟᴄᴏᴍᴇ 〕\n┊ʜᴇʏ ${namaewa}\n┊ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ:\n┊${mdata.subject}\n┊ɴᴜᴍʙᴇʀ: @${num.split('@')[0]}\n┊ʜᴏᴘᴇғᴜʟʟʏ ғᴇᴇʟ ᴀᴛ ʜᴏᴍᴇ\n└───────────𔒝`
             Ruri.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]} })
             } else if (anu.action == 'promote') {
             let img = await getBuffer(ppimg)
