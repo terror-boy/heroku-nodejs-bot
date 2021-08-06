@@ -2596,27 +2596,26 @@ case 'setmenu':
 				Ruri.sendMessage(from, yeh, text, {quoted: freply})
 				await limitAdd(sender)
 				break
-				case 'hidetag':
+		case 'hidetag':
 				if (!isVerify) return reply(aml.noregis)
                 if (isLimit(sender)) return reply(aml.limitend)
                 if (isBanned) return reply(aml.baned)
                 if (!isPremium && !Mel.key.fromMe) return reply(aml.premium)
                 if (!isGroup) return reply(aml.groupo)
-                var value = body.slice(8)
-                var group = await Ruri.groupMetadata(from)
-                var member = group['participants']
-                var mem = []
-                member.map( async adm => {
-                mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
-                })
-                var options = {
-                text: value,
-                contextInfo: { mentionedJid: mem },
-                quoted: Mel
-                }
-                Ruri.sendMessage(from, options, text, { thumbnail: fs.readFileSync('./lib/logo.jpg'), caption: 'JARVIS', "contextInfo": { text: 'hi', sendEphemeral: true, "externalAdReply": { "title": `${''}${tampilUcapan}${' '}${pushname}${''}`, "body": `${'https://youtube.com/c/JZMODS'}`, "previewType": 'PHOTO', "thumbnailUrl": `${'https://b.top4top.io/s_2024uih200.jpg'}`, "thumbnail": '', "sourceUrl": `${'https://b.top4top.io/s_2024uih200.jpg'}`}},quoted: fkontak})
-                await limitAdd(sender)
-                break
+                var value = body.slice(9)
+					var group = await Ruri.groupMetadata(from)
+					var member = group['participants']
+					var mem = []
+					member.map( async adm => {
+					mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+					})
+					var options = {
+					text: value,
+					contextInfo: { mentionedJid: mem },
+					quoted: Mel
+					}
+					Ruri.sendMessage(from, options, text)
+					break
 case 'infogc':
 				if (!isVerify) return reply(aml.noregis)
 				if (isBanned) return reply(aml.baned)
