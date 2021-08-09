@@ -1,43 +1,148 @@
-# JARVIS V1
-<p align="center">
-<a href="#"><img title="SPARROW OFC" src="https://img.shields.io/badge/SPARROW-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
-</p>
-<p align="center">
-<a href="https://github.com/Sparrow"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AKSHAY-orange.svg?style=for-the-badge&logo=github"></a>
-</p>
-<p align="center">
-<a href="https://github.com/sparroo/jarvis/followers"><img title="Followers" src="https://img.shields.io/github/followers/sparroo?color=blue&style=flat-square"></a>
-<a href="https://github.com/sparroo/jarvis/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/sparroo/jarviscolor=red&style=flat-square"></a>
-<a href="https://github.com/sparroo/jarvis/network/members"><img title="Forks" src="https://img.shields.io/github/forks/sparroo/jarvis?color=red&style=flat-square"></a>
-<a href="https://github.com/sparroo/jarvis/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/sparroo/jarvis?label=Watchers&color=blue&style=flat-square"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2sparroo%2Fjarvis&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-</p>
-</details>
+# wabot-aq
 
-### THANKS TO SPARROW
+Simple WhatsApp Bot
 
-### CLONE THIS PROJECT  <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/hmm.gif" width="29px">
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Nurutomo/wabot-aq)
+
+## FOR TERMUX/UBUNTU/SSH USER
+
 ```bash
-> Download termux app from playstore
-> termux-setup-storage
-> apt-get update -y
-> apt-get upgrade -y
-> pkg install git -y
-> pkg install bash -y
-> pkg install mc -y
-> git clone https://github.com/sparroo/jarvis
-> cd jarvis
-> bash install.sh
-> npm start
-> SCAN THE QR CODE
+apt update && apt upgrade
+apt install git -y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install imagemagick -y
+git clone https://github.com/Nurutomo/wabot-aq
+cd wabot-aq
+npm install
+npm update
 ```
 
-## CONTACT ME <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/powerup.gif" width="29px">
+---------
 
-* [`WhatsApp Number `](https://wa.me/+919947291867)
-* [`WhatsApp Group `](https://chat.whatsapp.com/I1xiHrlbW6X2Y7s1DzBLz4)
-## THANKS TO <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Handshake.gif" width="60px">
+## FOR WINDOWS/VPS/RDP USER
 
-* [`SPARROW`]
-<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Mario_Gameplay.gif" alt="Mario Game" width="600" />
+* Download And Install Git [`Click Here`](https://git-scm.com/downloads)
+* Download And Install NodeJS [`Click Here`](https://nodejs.org/en/download)
+* Download And Install FFmpeg [`Click Here`](https://ffmpeg.org/download.html) (**Don't Forget Add FFmpeg to PATH enviroment variables**)
+* Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
+```bash
+git clone https://github.com/Nurutomo/wabot-aq
+cd wabot-aq
+npm install
+npm update
+```
+
+---------
+
+## Run
+
+```bash
+node .
+```
+
+---------
+
+## Arguments `node . [--options] [<session name>]`
+
+### `--self`
+
+Activate self mode (Ignores other)
+
+### `--pconly`
+
+If that chat not from private bot, bot will ignore
+
+### `--gconly`
+
+If that chat not from group, bot will ignore
+
+### `--swonly`
+
+If that chat not from status, bot will ignore
+
+### `--prefix <prefixes>`
+
+* `prefixes` are seperated by each character
+Set prefix
+
+### `--server`
+
+Used for [heroku](https://heroku.com/) or scan through website
+
+### `--db <json-server-url>`
+
+Use external db instead of local db, 
+Example Server `https://json-server.nurutomo.repl.co/`
+Code: `https://repl.it/@Nurutomo/json-server`
+
+`node . --db 'https://json-server.nurutomo.repl.co/'`
+
+The server should have like this specification
+
+#### GET
+
+```http
+GET /
+Accept: application/json
+```
+
+#### POST
+
+```http
+POST /
+Content-Type: application/json
+
+{
+ data: {}
+}
+```
+
+### `--big-qr`
+
+If small qr unicode doesn't support
+
+### `--restrict`
+
+Enables restricted plugins (which can lead your number to be **banned** if used too often)
+
+* Group Administration `add, kick`
+
+### `--img`
+
+Enable image inspector through terminal
+
+### `--autoread`
+
+If enabled, all incoming messages will be marked as read
+
+### `--nyimak`
+
+No bot, just print received messages and add users to database
+
+### `--test`
+
+**Development** Testing Mode
+
+### `--trace`
+
+```js
+conn.logger.level = 'trace'
+```
+
+### `--debug`
+
+```js
+conn.logger.level = 'debug'
+```
+
+---------
+
+<a href="https://api.xteam.xyz"><img src="https://i.ibb.co/7j0vtwz/xlogo.png" width="100" height="100"></a> | [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Ftwrr](https://github.com/Ftwrr.png?size=100)](https://github.com/Ftwrr) 
+----|----|----|----
+[XTEAM](https://api.xteam.xyz/) | [Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [Ftwrr](https://github.com/Ftwrr)
+Powered by XTEAM | Author / Creator | Most Active Contributor | 2nd Most Active Contributor
+
+
+NOTE: This project will not maintained after `27 June 2021`, that means no update. Feel free to anyone to continue this project :)
